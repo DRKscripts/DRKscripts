@@ -18,9 +18,29 @@
     }
     header h1 {
       color: #ff3c3c;
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(90deg, #ff3c3c 20%, #ffffff 50%, #ff3c3c 80%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine-text 3s linear infinite;
+      font-size: 2.5rem;
+      font-weight: bold;
+      user-select: none;
+      margin: 0 auto;
+    }
+    @keyframes shine-text {
+      0% {
+        background-position: 200% 0;
+      }
+      100% {
+        background-position: -200% 0;
+      }
     }
     .section {
       padding: 30px 10px;
+      background-color: #1c1c1c;
     }
     .grid {
       display: grid;
@@ -30,7 +50,7 @@
       margin: 0 auto;
     }
     .card {
-      background-color: #1e1e1e;
+      background-color: #2b2b2b;
       border-radius: 10px;
       padding: 15px;
       box-shadow: 0 0 10px rgba(0,255,204,0.1);
@@ -60,10 +80,15 @@
       border-radius: 5px;
       display: inline-block;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.1s ease;
+      cursor: pointer;
+      user-select: none;
     }
     .download-button:hover {
       background-color: #00c9a5;
+    }
+    .download-button:active {
+      transform: scale(0.95);
     }
     footer {
       background-color: #1c1c1c;
@@ -72,29 +97,93 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    /* Novo container para logo + nome + redes sociais */
+    .logo-section {
+      background-color: #1c1c1c;
+      padding: 30px 10px 15px;
+      text-align: center;
+    }
+    .logo-section img.logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(128, 0, 128, 0.4); /* borda roxa suave */
+      display: block;
+      margin: 0 auto 15px;
+      box-shadow: 0 0 15px rgba(128, 0, 128, 0.5);
+    }
+    .logo-section h1 {
+      font-size: 2.5rem;
+      color: #aa55ff;
+      text-shadow:
+        0 0 6px #aa55ff,
+        0 0 15px #aa55ff,
+        0 0 20px #aa55ff;
+      margin: 0 0 20px;
+      user-select: none;
+    }
+    .logo-section .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .logo-section .social-links a img {
+      width: 50px;
+      height: 50px;
+      border-radius: 0; /* Remove qualquer borda circular */
+      box-shadow: none;
+      transition: transform 0.3s ease;
+    }
+    .logo-section .social-links a:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Títulos Executores e Scripts com brilho */
+    section + header h1 {
+      color: #ff3c3c;
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(90deg, #ff3c3c 20%, #ffffff 50%, #ff3c3c 80%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine-text 3s linear infinite;
+      font-size: 2.5rem;
+      font-weight: bold;
+      user-select: none;
+      margin: 30px auto 20px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
 
+  <section class="logo-section">
+    <img class="logo" src="https://i.imgur.com/uZAcehF.jpeg" alt="DRKscripts logo" />
+    <h1>DRKscripts</h1>
+    <div class="social-links">
+      <a href="https://youtube.com/@drkscripts?si=Vln2X8b7zmp7hNJC" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+      </a>
+      <a href="https://discord.gg/7YBAfEw5DT" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
+      </a>
+      <a href="https://chat.whatsapp.com/JXcRyTfRhGl9rz06wih05G" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+      </a>
+    </div>
+  </section>
+
   <header>
-    <h1>DRK - Executores</h1>
+    <h1>Executores</h1>
   </header>
-<section class="section" style="text-align: center;">
-  <h2>Conecte-se conosco</h2>
-  <div style="margin-top: 15px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-    <a href="https://youtube.com/@drkscripts?si=Vln2X8b7zmp7hNJC" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" style="width: 50px;">
-    </a>
-    <a href="https://discord.gg/7YBAfEw5DT" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord" style="width: 50px;">
-    </a>
-    <a href="https://chat.whatsapp.com/JXcRyTfRhGl9rz06wih05G" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" style="width: 50px;">
-    </a>
-  </div>
-</section>
+
   <section class="section">
     <div class="grid">
+      <!-- Todos os executores originais preservados -->
       <div class="card">
         <img src="https://i.imgur.com/KPXHFKo.jpeg" alt="Delta V670" />
         <h3>Delta V670 Oficial</h3>
@@ -131,21 +220,18 @@
         <p>Executor moderno com suporte a múltiplas APIs e atualizações constantes.</p>
         <a href="https://www.mediafire.com/folder/l7or6osuao388/CodeX" class="download-button">Download</a>
       </div>
-
       <div class="card">
         <img src="https://i.imgur.com/xYGrX7G.png" alt="Arceus Executor" />
         <h3>Arceus X</h3>
         <p>Um dos executores mais usados em dispositivos móveis para scripts .lua.</p>
         <a href="https://www.mediafire.com/folder/dtj1wcgvfxw7j/Arceus" class="download-button">Download</a>
       </div>
-
       <div class="card">
         <img src="https://i.imgur.com/EKx61Zo.png" alt="Trigon Executor" />
         <h3>Trigon Executor</h3>
         <p>Executor robusto com grande compatibilidade e interface personalizável.</p>
         <a href="https://www.mediafire.com/folder/0yflqig8cm7d1/Trigon" class="download-button">Download</a>
       </div>
-
       <div class="card">
         <img src="https://i.imgur.com/FKYpAXU.png" alt="Cryptic Executor" />
         <h3>Cryptic Executor</h3>
@@ -156,11 +242,12 @@
   </section>
 
   <header>
-    <h1>DRK - Scripts</h1>
+    <h1>Scripts</h1>
   </header>
 
   <section class="section">
     <div class="grid">
+      <!-- Todos os scripts preservados -->
       <div class="card">
         <img src="https://i.imgur.com/UNdzjUW.png" alt="Script Blox Fruits" />
         <h3>Script Blox Fruits</h3>
@@ -178,25 +265,30 @@
         <h3>Script Arsenal AimBot</h3>
         <p>Melhore sua mira e domine o campo de batalha.</p>
         <a href="https://pastebin.com/sHdm8NyG" class="download-button">Download</a>
-        </div>
-        <div class="card">
-  <img src="https://i.imgur.com/Mx5IdOZ.png" alt="Blue Lock Script" />
-  <h3>Script Blue Lock</h3>
-  <p>Domine o campo com funções automáticas no game Blue Lock.</p>
-  <a href="https://pastebin.com/nh0rW834" class="download-button">Download</a>
-</div>
-<div class="card">
-  <img src="https://i.imgur.com/wIsqE64.png" alt="Dead Rails Script" />
-  <h3>Script Dead Rails</h3>
-  <p>Script funcional com funções de auto kill, speed e mais.</p>
-  <a href="https://pastebin.com/7EbLDRNi" class="download-button">Download</a>
-</div>
-<div class="card">
-  <img src="https://i.imgur.com/XWg3Dgu.png" alt="Grow a Garden Script" />
-  <h3>Script Grow a Garden</h3>
-  <p>Script com funções automáticas para facilitar o cultivo e evolução no jogo.</p>
-  <a href="https://pastebin.com/mVgSGU3z" class="download-button">Download</a>
-</div>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/Mx5IdOZ.png" alt="Blue Lock Script" />
+        <h3>Script Blue Lock</h3>
+        <p>Domine o campo com funções automáticas no game Blue Lock.</p>
+        <a href="https://pastebin.com/nh0rW834" class="download-button">Download</a>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/wIsqE64.png" alt="Dead Rails Script" />
+        <h3>Script Dead Rails</h3>
+        <p>Script funcional com funções de auto kill, speed e mais.</p>
+        <a href="https://pastebin.com/7EbLDRNi" class="download-button">Download</a>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/XWg3Dgu.png" alt="Grow a Garden Script" />
+        <h3>Script Grow a Garden</h3>
+        <p>Script com funções automáticas para facilitar o cultivo e evolução no jogo.</p>
+        <a href="https://pastebin.com/mVgSGU3z" class="download-button">Download</a>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/AynjCpC.png" alt="Gum Infinity Script" />
+        <h3>Script Gum Infinity</h3>
+        <p>Script com auto farm, coletor automático de frutas e recursos extras para Gum Infinity.</p>
+        <a href="https://pastebin.com/XMkXLEXY" class="download-button">Download</a>
       </div>
     </div>
   </section>
