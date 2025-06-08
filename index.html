@@ -68,6 +68,23 @@
       user-select: none;
     }
 
+    .logo-section .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo-section .social-links a img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-section .social-links a:hover img {
+      transform: scale(1.1);
+    }
+
     .tab-menu {
       max-width: 1200px;
       margin: 20px auto;
@@ -201,6 +218,17 @@
     <section class="logo-section">
       <img class="logo" src="https://i.imgur.com/uZAcehF.jpeg" alt="Logo da DRKscripts" loading="lazy" />
       <h1>DRKscripts</h1>
+      <div class="social-links" role="navigation" aria-label="Links para redes sociais">
+        <a href="https://youtube.com/@drkscripts?si=Vln2X8b7zmp7hNJC" target="_blank" rel="noopener noreferrer" aria-label="Canal do YouTube da DRKscripts">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="Ícone do YouTube" loading="lazy" />
+        </a>
+        <a href="https://discord.gg/7YBAfEw5DT" target="_blank" rel="noopener noreferrer" aria-label="Servidor do Discord da DRKscripts">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Ícone do Discord" loading="lazy" />
+        </a>
+        <a href="https://chat.whatsapp.com/JXcRyTfRhGl9rz06wih05G" target="_blank" rel="noopener noreferrer" aria-label="Grupo do WhatsApp da DRKscripts">
+          <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="Ícone do WhatsApp" loading="lazy" />
+        </a>
+      </div>
     </section>
 
     <nav class="tab-menu" role="tablist">
@@ -218,7 +246,54 @@
           <p>Executor atualizado e estável, ideal para scripts Roblox.</p>
           <a href="https://www.mediafire.com/folder/w9tduaxpvezmn/Delta" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
-        <!-- Outros executores... -->
+        <div class="card">
+          <img src="https://i.imgur.com/6gSyABv.jpeg" alt="KRNL Executor" loading="lazy" />
+          <h3>KRNL Executor</h3>
+          <p>Popular executor gratuito com suporte para vários jogos.</p>
+          <a href="https://www.mediafire.com/folder/fo9ck3vvnpjcg/KRNL" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/arRA8yY.png" alt="Fluxus Android" loading="lazy" />
+          <h3>Fluxus Android</h3>
+          <p>Executor .lua para dispositivos móveis com interface simples.</p>
+          <a href="https://www.mediafire.com/folder/v2cpl0f39ytt3/Fluxus" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/Hziwdlf.jpeg" alt="Evon Executor" loading="lazy" />
+          <h3>Evon Executor</h3>
+          <p>Executor leve e poderoso, com interface intuitiva.</p>
+          <a href="https://www.mediafire.com/file/697h1rbsruy15be/Evon.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/9gsfVl9.jpeg" alt="Ronix Executor" loading="lazy" />
+          <h3>Ronix Executor</h3>
+          <p>Executor rápido e seguro com bom suporte a scripts modernos.</p>
+          <a href="https://www.mediafire.com/file/w8ud8e04orqdh9t/Ronix_v2.671.818.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/HcmrV4G.png" alt="Codex Executor" loading="lazy" />
+          <h3>Codex Executor</h3>
+          <p>Executor moderno com suporte a múltiplas APIs e atualizações constantes.</p>
+          <a href="https://www.mediafire.com/folder/l7or6osuao388/CodeX" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/xYGrX7G.png" alt="Arceus X" loading="lazy" />
+          <h3>Arceus X</h3>
+          <p>Um dos executores mais usados em dispositivos móveis para scripts .lua.</p>
+          <a href="https://www.mediafire.com/folder/dtj1wcgvfxw7j/Arceus" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/EKx61Zo.png" alt="Trigon Executor" loading="lazy" />
+          <h3>Trigon Executor</h3>
+          <p>Executor robusto com grande compatibilidade e interface personalizável.</p>
+          <a href="https://www.mediafire.com/folder/0yflqig8cm7d1/Trigon" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/FKYpAXU.png" alt="Cryptic Executor" loading="lazy" />
+          <h3>Cryptic Executor</h3>
+          <p>Executor avançado focado em segurança e estabilidade para scripts Roblox.</p>
+          <a href="https://www.mediafire.com/folder/hcr3e43z65urg/Cryptic" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
       </div>
     </section>
 
@@ -267,7 +342,42 @@
           <p>Auto farm, teleportes e muito mais para dominar o jogo.</p>
           <a href="https://pastebin.com/uXg7t1JY" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
-        <!-- Outros scripts... -->
+        <div class="card">
+          <img src="https://i.imgur.com/AEwjwNw.png" alt="Script Pet Simulator X" loading="lazy" />
+          <h3>Script Pet Simulator X</h3>
+          <p>Ganhe moedas infinitas e abra ovos automaticamente.</p>
+          <a href="https://pastebin.com/qwVHUVbP" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/zhMd46O.png" alt="Script Arsenal AimBot" loading="lazy" />
+          <h3>Script Arsenal AimBot</h3>
+          <p>Melhore sua mira e domine o campo de batalha.</p>
+          <a href="https://pastebin.com/sHdm8NyG" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/Mx5IdOZ.png" alt="Script Blue Lock" loading="lazy" />
+          <h3>Script Blue Lock</h3>
+          <p>Domine o campo com funções automáticas no game Blue Lock.</p>
+          <a href="https://pastebin.com/nh0rW834" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/wIsqE64.png" alt="Script Dead Rails" loading="lazy" />
+          <h3>Script Dead Rails</h3>
+          <p>Script funcional com funções de auto kill, speed e mais.</p>
+          <a href="https://pastebin.com/7EbLDRNi" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/XWg3Dgu.png" alt="Script Grow a Garden" loading="lazy" />
+          <h3>Script Grow a Garden</h3>
+          <p>Script com funções automáticas para facilitar o cultivo e evolução.</p>
+          <a href="https://pastebin.com/mVgSGU3z" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/AynjCpC.png" alt="Script Gum Infinity" loading="lazy" />
+          <h3>Script Gum Infinity</h3>
+          <p>Auto farm, coletor automático de frutas e recursos extras.</p>
+          <a href="https://pastebin.com/XMkXLEXY" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
       </div>
     </section>
   </main>
