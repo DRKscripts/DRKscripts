@@ -90,7 +90,7 @@
       max-width: 1200px;
       margin: 20px auto;
       display: flex;
-      justify-content: center; /* Centraliza os botões */
+      justify-content: center; /* Centraliza os botões horizontalmente */
       gap: 10px;
       flex-wrap: wrap;
       text-align: center; /* Garante que o texto dentro dos botões fique centralizado */
@@ -104,24 +104,25 @@
       border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.1s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para a transformação */
     }
 
     .tab-button:hover {
       background-color: var(--secondary-color);
       color: #000;
+      transform: scale(1.05); /* Efeito de escala no hover */
     }
 
     .tab-button.active {
       background-color: var(--primary-color);
       color: #000;
-      transform: scale(1.05);
+      transform: scale(1.05); /* Efeito de escala quando ativo */
     }
 
     .tab-content {
       display: none;
       padding: 30px 10px;
-      animation: fadeIn 1.5s ease-in-out; /* Animação para as abas */
+      animation: fadeIn 1.5s ease-in-out; /* Animação para as abas ao serem ativadas */
     }
 
     .tab-content.active {
@@ -444,4 +445,4 @@
     });
   </script>
 </body>
-        </html>
+</html>
