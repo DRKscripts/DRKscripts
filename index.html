@@ -41,6 +41,7 @@
       padding: 30px 10px 15px;
       text-align: center;
       background-color: transparent;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     .logo-section img.logo {
@@ -89,9 +90,10 @@
       max-width: 1200px;
       margin: 20px auto;
       display: flex;
-      justify-content: center;
+      justify-content: center; /* Centraliza os botões */
       gap: 10px;
       flex-wrap: wrap;
+      text-align: center; /* Garante que o texto dentro dos botões fique centralizado */
     }
 
     .tab-button {
@@ -119,10 +121,16 @@
     .tab-content {
       display: none;
       padding: 30px 10px;
+      animation: fadeIn 1.5s ease-in-out; /* Animação para as abas */
     }
 
     .tab-content.active {
       display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .grid {
@@ -436,4 +444,4 @@
     });
   </script>
 </body>
-  </html>
+        </html>
