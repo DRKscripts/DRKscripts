@@ -90,12 +90,12 @@
       max-width: 1200px;
       margin: 0 auto 20px;
       display: flex;
-      justify-content: center; /* Centraliza os botões */
-      align-items: center; /* Garante alinhamento vertical */
+      justify-content: center;
+      align-items: center;
       gap: 10px;
       flex-wrap: wrap;
       padding: 10px 0;
-      background: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semi-transparente para destacar os botões */
+      background: rgba(0, 0, 0, 0.5);
     }
 
     .tab-button {
@@ -107,29 +107,37 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
-      text-align: center; /* Garante que o texto fique centralizado dentro do botão */
+      text-align: center;
     }
 
     .tab-button:hover {
       background-color: var(--secondary-color);
       color: #000;
-      transform: scale(1.05); /* Efeito de escala no hover */
+      transform: scale(1.05);
     }
 
     .tab-button.active {
       background-color: var(--primary-color);
       color: #000;
-      transform: scale(1.05); /* Efeito de escala quando ativo */
+      transform: scale(1.05);
     }
 
     .tab-content {
       display: none;
       padding: 30px 10px;
-      animation: fadeIn 1.5s ease-in-out; /* Animação para as abas ao serem ativadas */
     }
 
     .tab-content.active {
       display: block;
+    }
+
+    .tab-content h1 {
+      text-align: center; /* Centraliza os títulos */
+      font-size: 2rem;
+      color: var(--accent-purple);
+      text-shadow: 0 0 6px var(--accent-purple), 0 0 15px var(--accent-purple);
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in-out; /* Animação direta nos títulos */
     }
 
     @keyframes fadeIn {
@@ -214,6 +222,7 @@
       .grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
       .card img { max-height: 140px; }
       .logo-section img.logo { width: 120px; height: 120px; }
+      .tab-content h1 { font-size: 1.5rem; }
     }
 
     @media (max-width: 480px) {
@@ -432,18 +441,16 @@
           const tabId = button.getAttribute('data-tab');
           console.log(`Clicado na aba: ${tabId}`);
 
-          tabButtons.forEach(btn => {
-            btn.classList.remove('active');
-            // Remove a animação anterior para forçar a recriação
-            btn.style.transition = 'none';
-            setTimeout(() => btn.style.transition = '', 0);
-          });
+          tabButtons.forEach(btn => btn.classList.remove('active'));
           tabContents.forEach(content => {
             content.classList.remove('active');
-            // Remove a animação anterior para recriação
-            content.style.animation = 'none';
-            void content.offsetWidth; // Força reflow
-            content.style.animation = '';
+            // Força recriação da animação no título
+            const title = content.querySelector('h1');
+            if (title) {
+              title.style.animation = 'none';
+              void title.offsetWidth; // Força reflow
+              title.style.animation = 'fadeIn 1.5s ease-in-out';
+            }
           });
 
           button.classList.add('active');
@@ -459,4 +466,4 @@
     });
   </script>
 </body>
-</html>
+          </html>
