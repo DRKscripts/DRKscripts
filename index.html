@@ -2,65 +2,118 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DRK - Executores e Scripts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DRKscripts - Baixe os melhores executores e scripts para jogos Roblox, como Blox Fruits, Pet Simulator X e mais." />
+  <meta name="keywords" content="DRKscripts, Roblox, executores, scripts, Blox Fruits, Pet Simulator X" />
+  <meta name="author" content="DRK Scripts Team" />
+  <title>DRKscripts - Executores e Scripts para Roblox</title>
   <style>
-    body {
+    :root {
+      --primary-color: #ff3c3c;
+      --secondary-color: #00c9a5;
+      --card-bg: rgba(43, 43, 43, 0.8); /* Fundo dos cards com leve transparência */
+      --text-light: #ccc;
+      --accent-purple: #aa55ff;
+    }
+
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0f0f0f;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-image: url('https://i.imgur.com/GsiblQZ.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       color: #fff;
-      background: linear-gradient(-45deg, #0f0f0f, #1a1a2e, #16213e, #0f0f0f);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
     }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
+
     main {
       flex: 1;
+      padding-bottom: 20px;
     }
-    
+
     header {
-      background-color: #1c1c1c;
       padding: 20px;
       text-align: center;
+      background-color: transparent;
     }
+
     header h1 {
-      color: #ff3c3c;
-      position: relative;
-      display: inline-block;
-      background: linear-gradient(90deg, #ff3c3c 20%, #ffffff 50%, #ff3c3c 80%);
+      color: var(--primary-color);
+      background: linear-gradient(90deg, var(--primary-color) 20%, #ffffff 50%, var(--primary-color) 80%);
       background-size: 200% 100%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shine-text 3s linear infinite;
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 5vw, 2.5rem);
       font-weight: bold;
       user-select: none;
       margin: 0 auto;
     }
+
     @keyframes shine-text {
       0% { background-position: 200% 0; }
       100% { background-position: -200% 0; }
     }
-    
+
     .section {
       padding: 30px 10px;
-      background-color: #1c1c1c;
+      background-color: transparent;
       animation: fadeIn 1.5s ease-in-out;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
+
+    .tab-menu {
+      max-width: 1200px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      padding: 10px 20px;
+      background-color: var(--card-bg);
+      color: var(--text-light);
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+
+    .tab-button:hover {
+      background-color: var(--secondary-color);
+      color: #000;
+    }
+
+    .tab-button.active {
+      background-color: var(--primary-color);
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -68,19 +121,46 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    
+
     .card {
-      background-color: #2b2b2b;
+      background-color: var(--card-bg);
       border-radius: 10px;
       padding: 15px;
-      box-shadow: 0 0 10px rgba(0,255,204,0.1);
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.1);
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInCard 0.5s ease forwards;
+      animation-delay: calc(0.1s * var(--card-index));
     }
+
+    .card:nth-child(1) { --card-index: 1; }
+    .card:nth-child(2) { --card-index: 2; }
+    .card:nth-child(3) { --card-index: 3; }
+    .card:nth-child(4) { --card-index: 4; }
+    .card:nth-child(5) { --card-index: 5; }
+    .card:nth-child(6) { --card-index: 6; }
+    .card:nth-child(7) { --card-index: 7; }
+    .card:nth-child(8) { --card-index: 8; }
+    .card:nth-child(9) { --card-index: 9; }
+    .card:nth-child(10) { --card-index: 10; }
+    .card:nth-child(11) { --card-index: 11; }
+    .card:nth-child(12) { --card-index: 12; }
+    .card:nth-child(13) { --card-index: 13; }
+    .card:nth-child(14) { --card-index: 14; }
+    .card:nth-child(15) { --card-index: 15; }
+    .card:nth-child(16) { --card-index: 16; }
+
+    @keyframes fadeInCard {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .card:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0, 255, 204, 0.3);
     }
+
     .card img {
       width: 100%;
       max-height: 160px;
@@ -88,50 +168,52 @@
       border-radius: 8px;
       margin-bottom: 10px;
     }
+
     .card h3 {
-      color: #ff3c3c;
+      color: var(--primary-color);
       margin: 10px 0 5px;
+      font-size: 1.2rem;
     }
+
     .card p {
-      font-size: 14px;
-      color: #ccc;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 15px;
     }
-    
+
     .download-button {
-      margin-top: 10px;
       padding: 10px 20px;
-      background-color: #ff3c3c;
+      background-color: var(--primary-color);
       color: #000;
       text-decoration: none;
       border-radius: 5px;
       display: inline-block;
       font-weight: bold;
       transition: background-color 0.3s ease, transform 0.1s ease;
-      cursor: pointer;
-      user-select: none;
+      position: relative;
+      overflow: hidden;
     }
+
     .download-button:hover {
-      background-color: #00c9a5;
+      background-color: var(--secondary-color);
     }
+
     .download-button:active {
       transform: scale(0.95);
     }
-    
-    footer {
-      background-color: #1c1c1c;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      width: 100%;
-      animation: fadeIn 2s ease-in-out;
+
+    .download-button::after {
+      content: "⬇";
+      margin-left: 5px;
+      font-size: 0.8rem;
     }
 
-    /* Seção da logo */
     .logo-section {
-      background-color: #1c1c1c;
+      background-color: transparent;
       padding: 30px 10px 15px;
       text-align: center;
     }
+
     .logo-section img.logo {
       width: 140px;
       height: 140px;
@@ -143,191 +225,295 @@
       box-shadow: 0 0 15px rgba(128, 0, 128, 0.5);
       animation: pulse 4s ease-in-out infinite;
     }
+
     @keyframes pulse {
       0% { transform: scale(1); box-shadow: 0 0 15px rgba(128, 0, 128, 0.5); }
       50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(128, 0, 128, 0.8); }
       100% { transform: scale(1); box-shadow: 0 0 15px rgba(128, 0, 128, 0.5); }
     }
+
     .logo-section h1 {
-      font-size: 2.5rem;
-      color: #aa55ff;
-      text-shadow: 0 0 6px #aa55ff, 0 0 15px #aa55ff, 0 0 20px #aa55ff;
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      color: var(--accent-purple);
+      text-shadow: 0 0 6px var(--accent-purple), 0 0 15px var(--accent-purple);
       margin: 0 0 20px;
       user-select: none;
       opacity: 0;
       animation: fadeInText 1.5s ease-in-out forwards;
       animation-delay: 0.5s;
     }
+
     @keyframes fadeInText {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     .logo-section .social-links {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 20px;
       flex-wrap: wrap;
     }
+
     .logo-section .social-links a img {
-      width: 50px;
-      height: 50px;
-      border-radius: 0;
-      box-shadow: none;
+      width: 40px;
+      height: 40px;
       transition: transform 0.3s ease;
     }
+
     .logo-section .social-links a:hover img {
       transform: scale(1.1);
     }
 
-    /* Títulos Executores e Scripts */
-    section + header h1 {
-      color: #ff3c3c;
-      position: relative;
-      display: inline-block;
-      background: linear-gradient(90deg, #ff3c3c 20%, #ffffff 50%, #ff3c3c 80%);
-      background-size: 200% 100%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shine-text 3s linear infinite;
-      font-size: 2.5rem;
-      font-weight: bold;
-      user-select: none;
-      margin: 30px auto 20px;
+    footer {
+      background-color: transparent;
+      color: var(--text-light);
       text-align: center;
+      padding: 20px;
+      width: 100%;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary-color);
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-weight: bold;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .card img {
+        max-height: 140px;
+      }
+
+      .logo-section img.logo {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1,
+      .logo-section h1 {
+        font-size: 1.8rem;
+      }
+
+      .card h3 {
+        font-size: 1rem;
+      }
+
+      .card p {
+        font-size: 0.8rem;
+      }
+
+      .download-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+
+      .tab-button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
     }
   </style>
 </head>
 <body>
-
   <main>
-    <section class="logo-section">
-      <img class="logo" src="https://i.imgur.com/uZAcehF.jpeg" alt="DRKscripts logo" />
+    <section class="logo-section" role="banner">
+      <img class="logo" src="https://i.imgur.com/uZAcehF.jpeg" alt="Logo da DRKscripts, representando scripts e executores para Roblox" loading="lazy" />
       <h1>DRKscripts</h1>
-      <div class="social-links">
-        <a href="https://youtube.com/@drkscripts?si=Vln2X8b7zmp7hNJC" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+      <div class="social-links" role="navigation" aria-label="Links para redes sociais">
+        <a href="https://youtube.com/@drkscripts?si=Vln2X8b7zmp7hNJC" target="_blank" rel="noopener noreferrer" aria-label="Canal do YouTube da DRKscripts">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="Ícone do YouTube" loading="lazy" />
         </a>
-        <a href="https://discord.gg/7YBAfEw5DT" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
+        <a href="https://discord.gg/7YBAfEw5DT" target="_blank" rel="noopener noreferrer" aria-label="Servidor do Discord da DRKscripts">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Ícone do Discord" loading="lazy" />
         </a>
-        <a href="https://chat.whatsapp.com/JXcRyTfRhGl9rz06wih05G" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+        <a href="https://chat.whatsapp.com/JXcRyTfRhGl9rz06wih05G" target="_blank" rel="noopener noreferrer" aria-label="Grupo do WhatsApp da DRKscripts">
+          <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="Ícone do WhatsApp" loading="lazy" />
         </a>
       </div>
     </section>
 
-    <header>
-      <h1>Executores</h1>
-    </header>
+    <nav class="tab-menu" role="tablist">
+      <button class="tab-button active" data-tab="executors" role="tab" aria-selected="true" aria-controls="executors">Executores</button>
+      <button class="tab-button" data-tab="executors-lite" role="tab" aria-selected="false" aria-controls="executors-lite">Executores Lite</button>
+      <button class="tab-button" data-tab="scripts" role="tab" aria-selected="false" aria-controls="scripts">Scripts</button>
+    </nav>
 
-    <section class="section">
+    <section id="executors" class="section tab-content active" role="region" aria-label="Lista de Executores">
+      <header role="heading" aria-level="1">
+        <h1>Executores</h1>
+      </header>
       <div class="grid">
         <div class="card">
-          <img src="https://i.imgur.com/KPXHFKo.jpeg" alt="Delta V675" />
-          <h3>Delta V675 Oficial</h3>
+          <img src="https://i.imgur.com/KPXHFKo.jpeg" alt="Executor Delta V670 Oficial para Roblox" loading="lazy" />
+          <h3>Delta V670 Oficial</h3>
           <p>Executor atualizado e estável, ideal para scripts Roblox.</p>
-          <a href="https://www.mediafire.com/folder/w9tduaxpvezmn/Delta" class="download-button">Download</a>
+          <a href="https://www.mediafire.com/folder/w9tduaxpvezmn/Delta" class="download-button" rel="noopener noreferrer" aria-label="Baixar Delta V670 Oficial">Download</a>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/6gSyABv.jpeg" alt="KRNL" />
+          <img src="https://i.imgur.com/6gSyABv.jpeg" alt="Executor KRNL para Roblox" loading="lazy" />
           <h3>KRNL Executor</h3>
           <p>Popular executor gratuito com suporte para vários jogos.</p>
-          <a href="https://www.mediafire.com/folder/fo9ck3vvnpjcg/KRNL" class="download-button">Download</a>
+          <a href="https://www.mediafire.com/folder/fo9ck3vvnpjcg/KRNL" class="download-button" rel="noopener noreferrer" aria-label="Baixar KRNL Executor">Download</a>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/arRA8yY.png" alt="Fluxus" />
+          <img src="https://i.imgur.com/arRA8yY.png" alt="Executor Fluxus Android para Roblox" loading="lazy" />
           <h3>Fluxus Android</h3>
           <p>Executor .lua para dispositivos móveis com interface simples.</p>
-          <a href="https://www.mediafire.com/folder/v2cpl0f39ytt3/Fluxus" class="download-button">Download</a>
+          <a href="https://www.mediafire.com/folder/v2cpl0f39ytt3/Fluxus" class="download-button" rel="noopener noreferrer" aria-label="Baixar Fluxus Android">Download</a>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/Hziwdlf.jpeg" alt="Evon Executor" />
+          <img src="https://i.imgur.com/Hziwdlf.jpeg" alt="Executor Evon para Roblox" loading="lazy" />
           <h3>Evon Executor</h3>
           <p>Executor leve e poderoso, com interface intuitiva.</p>
-          <a href="https://www.mediafire.com/file/697h1rbsruy15be/Evon.apk/file" class="download-button">Download</a>
+          <a href="https://www.mediafire.com/file/697h1rbsruy15be/Evon.apk/file" class="download-button" rel="noopener noreferrer" aria-label="Baixar Evon Executor">Download</a>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/HcmrV4G.png" alt="Codex Executor" />
+          <img src="https://i.imgur.com/9gsfVl9.jpeg" alt="Executor Ronix para Roblox" loading="lazy" />
+          <h3>Ronix Executor</h3>
+          <p>Executor rápido e seguro com bom suporte a scripts modernos.</p>
+          <a href="https://www.mediafire.com/file/w8ud8e04orqdh9t/Ronix_v2.671.818.apk/file" class="download-button" rel="noopener noreferrer" aria-label="Baixar Ronix Executor">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/HcmrV4G.png" alt="Executor Codex para Roblox" loading="lazy" />
           <h3>Codex Executor</h3>
           <p>Executor moderno com suporte a múltiplas APIs e atualizações constantes.</p>
-          <a href="https://www.mediafire.com/folder/l7or6osuao388/CodeX" class="download-button">Download</a>
+          <a href="https://www.mediafire.com/folder/l7or6osuao388/CodeX" class="download-button" rel="noopener noreferrer" aria-label="Baixar Codex Executor">Download</a>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/xYGrX7G.png" alt="Arceus Executor" />
+          <img src="https://i.imgur.com/xYGrX7G.png" alt="Executor Arceus X para Roblox" loading="lazy" />
           <h3>Arceus X</h3>
           <p>Um dos executores mais usados em dispositivos móveis para scripts .lua.</p>
-          <a href="https://www.mediafire.com/folder/dtj1wcgvfxw7j/Arceus" class="download-button">Download</a>
+          <a href="https://www.mediafire.com/folder/dtj1wcgvfxw7j/Arceus" class="download-button" rel="noopener noreferrer" aria-label="Baixar Arceus X">Download</a>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/FKYpAXU.png" alt="Cryptic Executor" />
+          <img src="https://i.imgur.com/EKx61Zo.png" alt="Executor Trigon para Roblox" loading="lazy" />
+          <h3>Trigon Executor</h3>
+          <p>Executor robusto com grande compatibilidade e interface personalizável.</p>
+          <a href="https://www.mediafire.com/folder/0yflqig8cm7d1/Trigon" class="download-button" rel="noopener noreferrer" aria-label="Baixar Trigon Executor">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/FKYpAXU.png" alt="Executor Cryptic para Roblox" loading="lazy" />
           <h3>Cryptic Executor</h3>
           <p>Executor avançado focado em segurança e estabilidade para scripts Roblox.</p>
-          <a href="https://www.mediafire.com/folder/hcr3e43z65urg/Cryptic" class="download-button">Download</a>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/Oh8fTlk.png" alt="Vega X Executor" />
-          <h3>Vega X</h3>
-          <p>Executor versátil com suporte robusto para scripts Roblox e interface amigável.</p>
-          <a href="https://www.mediafire.com/folder/jhu8cig70m6wb/VegaX" class="download-button">Download</a>
+          <a href="https://www.mediafire.com/folder/hcr3e43z65urg/Cryptic" class="download-button" rel="noopener noreferrer" aria-label="Baixar Cryptic Executor">Download</a>
         </div>
       </div>
     </section>
 
-    <header>
-      <h1>Scripts</h1>
-    </header>
-
-    <section class="section">
+    <section id="executors-lite" class="section tab-content" role="region" aria-label="Lista de Executores Lite">
+      <header role="heading" aria-level="1">
+        <h1>Executores Lite</h1>
+      </header>
       <div class="grid">
         <div class="card">
-          <img src="https://i.imgur.com/UNdzjUW.png" alt="Script Blox Fruits" />
+          <img src="https://i.imgur.com/HzKgECg.png" alt="Executor Delta Lite para Roblox" loading="lazy" />
+          <h3>Delta Lite</h3>
+          <p>Versão otimizada do Delta, ideal para dispositivos menos potentes.</p>
+          <a href="https://www.mediafire.com/folder/8r62cbyw5i142/DELTA+LITE" class="download-button" rel="noopener noreferrer" aria-label="Baixar Delta Lite">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/jfujlYl.png" alt="Executor Fluxus Lite para Roblox" loading="lazy" />
+          <h3>Fluxus Lite</h3>
+          <p>Fluxus otimizado para dispositivos Android de entrada.</p>
+          <a href="https://www.mediafire.com/folder/p6h81na49oxau/Fluxus+lite" class="download-button" rel="noopener noreferrer" aria-label="Baixar Fluxus Lite">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/ESRQ81S.png" alt="Executor KRNL Lite para Roblox" loading="lazy" />
+          <h3>KRNL Lite</h3>
+          <p>Versão leve do KRNL com desempenho otimizado para scripts básicos.</p>
+          <a href="https://www.mediafire.com/folder/ae78c0q5oabze/KRNL+LITE" class="download-button" rel="noopener noreferrer" aria-label="Baixar KRNL Lite">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/DPL0Ztw.png" alt="Executor Evon Lite para Roblox" loading="lazy" />
+          <h3>Evon Lite</h3>
+          <p>Versão otimizada do Evon, ideal para dispositivos menos potentes.</p>
+          <a href="https://www.mediafire.com/folder/curxkmp7949je/EVON+LITE" class="download-button" rel="noopener noreferrer" aria-label="Baixar Evon Lite">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/b6wRgCZ.png" alt="Executor Frostware Lite para Roblox" loading="lazy" />
+          <h3>Frostware Lite</h3>
+          <p>Executor leve e eficiente, otimizado para scripts simples.</p>
+          <a href="https://www.mediafire.com/folder/8fw68avzcwc1o/Frostware+LITE" class="download-button" rel="noopener noreferrer" aria-label="Baixar Frostware Lite">Download</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="scripts" class="section tab-content" role="region" aria-label="Lista de Scripts">
+      <header role="heading" aria-level="1">
+        <h1>Scripts</h1>
+      </header>
+      <div class="grid">
+        <div class="card">
+          <img src="https://i.imgur.com/UNdzjUW.png" alt="Script para Blox Fruits no Roblox" loading="lazy" />
           <h3>Script Blox Fruits</h3>
           <p>Auto farm, teleportes e muito mais para dominar o jogo.</p>
-          <a href="https://pastebin.com/uXg7t1JY" class="download-button">Download</a>
+          <a href="https://pastebin.com/uXg7t1JY" class="download-button" rel="noopener noreferrer" aria-label="Baixar Script Blox Fruits">Download</a>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/AEwjwNw.png" alt="Pet Simulator X" />
+          <img src="https://i.imgur.com/AEwjwNw.png" alt="Script para Pet Simulator X no Roblox" loading="lazy" />
           <h3>Script Pet Simulator X</h3>
           <p>Ganhe moedas infinitas e abra ovos automaticamente.</p>
-          <a href="https://pastebin.com/qwVHUVbP" class="download-button">Download</a>
+          <a href="https://pastebin.com/qwVHUVbP" class="download-button" rel="noopener noreferrer" aria-label="Baixar Script Pet Simulator X">Download</a>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/zhMd46O.png" alt="Arsenal Aimbot" />
+          <img src="https://i.imgur.com/zhMd46O.png" alt="Script Arsenal AimBot para Roblox" loading="lazy" />
           <h3>Script Arsenal AimBot</h3>
           <p>Melhore sua mira e domine o campo de batalha.</p>
-          <a href="https://pastebin.com/sHdm8NyG" class="download-button">Download</a>
+          <a href="https://pastebin.com/sHdm8NyG" class="download-button" rel="noopener noreferrer" aria-label="Baixar Script Arsenal AimBot">Download</a>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/Mx5IdOZ.png" alt="Blue Lock Script" />
+          <img src="https://i.imgur.com/Mx5IdOZ.png" alt="Script para Blue Lock no Roblox" loading="lazy" />
           <h3>Script Blue Lock</h3>
           <p>Domine o campo com funções automáticas no game Blue Lock.</p>
-          <a href="https://pastebin.com/nh0rW834" class="download-button">Download</a>
+          <a href="https://pastebin.com/nh0rW834" class="download-button" rel="noopener noreferrer" aria-label="Baixar Script Blue Lock">Download</a>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/wIsqE64.png" alt="Dead Rails Script" />
+          <img src="https://i.imgur.com/wIsqE64.png" alt="Script para Dead Rails no Roblox" loading="lazy" />
           <h3>Script Dead Rails</h3>
           <p>Script funcional com funções de auto kill, speed e mais.</p>
-          <a href="https://pastebin.com/7EbLDRNi" class="download-button">Download</a>
+          <a href="https://pastebin.com/7EbLDRNi" class="download-button" rel="noopener noreferrer" aria-label="Baixar Script Dead Rails">Download</a>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/XWg3Dgu.png" alt="Grow a Garden Script" />
+          <img src="https://i.imgur.com/XWg3Dgu.png" alt="Script para Grow a Garden no Roblox" loading="lazy" />
           <h3>Script Grow a Garden</h3>
           <p>Script com funções automáticas para facilitar o cultivo e evolução no jogo.</p>
-          <a href="https://pastebin.com/mVgSGU3z" class="download-button">Download</a>
+          <a href="https://pastebin.com/mVgSGU3z" class="download-button" rel="noopener noreferrer" aria-label="Baixar Script Grow a Garden">Download</a>
         </div>
         <div class="card">
-          <img src="https://i.imgur.com/AynjCpC.png" alt="Gum Infinity Script" />
+          <img src="https://i.imgur.com/AynjCpC.png" alt="Script para Gum Infinity no Roblox" loading="lazy" />
           <h3>Script Gum Infinity</h3>
           <p>Script com auto farm, coletor automático de frutas e recursos extras para Gum Infinity.</p>
-          <a href="https://pastebin.com/XMkXLEXY" class="download-button">Download</a>
+          <a href="https://pastebin.com/XMkXLEXY" class="download-button" rel="noopener noreferrer" aria-label="Baixar Script Gum Infinity">Download</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <p>© 2025 DRK Scripts - Todos os direitos reservados.</p>
-  </footer>
-
-</body>
-</html>
+    <p>Aviso: Baixe e use executores/scripts por
