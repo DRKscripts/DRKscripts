@@ -88,12 +88,14 @@
 
     .tab-menu {
       max-width: 1200px;
-      margin: 20px auto;
+      margin: 0 auto 20px;
       display: flex;
-      justify-content: center; /* Centraliza os botões horizontalmente */
+      justify-content: center; /* Centraliza os botões */
+      align-items: center; /* Garante alinhamento vertical */
       gap: 10px;
       flex-wrap: wrap;
-      text-align: center; /* Garante que o texto dentro dos botões fique centralizado */
+      padding: 10px 0;
+      background: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semi-transparente para destacar os botões */
     }
 
     .tab-button {
@@ -104,7 +106,8 @@
       border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para a transformação */
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      text-align: center; /* Garante que o texto fique centralizado dentro do botão */
     }
 
     .tab-button:hover {
@@ -429,8 +432,19 @@
           const tabId = button.getAttribute('data-tab');
           console.log(`Clicado na aba: ${tabId}`);
 
-          tabButtons.forEach(btn => btn.classList.remove('active'));
-          tabContents.forEach(content => content.classList.remove('active'));
+          tabButtons.forEach(btn => {
+            btn.classList.remove('active');
+            // Remove a animação anterior para forçar a recriação
+            btn.style.transition = 'none';
+            setTimeout(() => btn.style.transition = '', 0);
+          });
+          tabContents.forEach(content => {
+            content.classList.remove('active');
+            // Remove a animação anterior para recriação
+            content.style.animation = 'none';
+            void content.offsetWidth; // Força reflow
+            content.style.animation = '';
+          });
 
           button.classList.add('active');
           const targetContent = document.getElementById(tabId);
