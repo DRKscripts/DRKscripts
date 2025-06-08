@@ -107,11 +107,11 @@
     }
 
     .tab-content {
-      display: none;
+      display: none !important; /* Aumentar especificidade */
     }
 
     .tab-content.active {
-      display: block;
+      display: block !important; /* Aumentar especificidade */
     }
 
     .grid {
@@ -229,8 +229,7 @@
     @keyframes pulse {
       0% { transform: scale(1); box-shadow: 0 0 15px rgba(128, 0, 128, 0.5); }
       50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(128, 0, 128, 0.8); }
-      100% { transform: scale(1); box-shadow: 0 0 15px rgba(128, 0, 128, 0.5); }
-    }
+      100% { transform: scale(1); box-shadow: 0 0 15px rgba(128, 0, 128, -union    }
 
     .logo-section h1 {
       font-size: clamp(2rem, 5vw, 2.5rem);
@@ -298,6 +297,19 @@
       visibility: visible;
     }
 
+    .error-message {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff3c3c;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      z-index: 1000;
+      display: none;
+    }
+
     @media (max-width: 768px) {
       .grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -336,20 +348,6 @@
         font-size: 0.9rem;
         padding: 8px 15px;
       }
-    }
-
-    /* Estilo para mensagens de erro no DOM */
-    .error-message {
-      position: fixed;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #ff3c3c;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      z-index: 1000;
-      display: none;
     }
   </style>
 </head>
@@ -402,7 +400,7 @@
           <p>Executor .lua para dispositivos móveis com interface simples.</p>
           <a href="https://www.mediafire.com/folder/v2cpl0f39ytt3/Fluxus" class="download-button" rel="noopener noreferrer" aria-label="Baixar Fluxus Android">Download</a>
         </div>
-.        <div class="card">
+        <div class="card">
           <img src="https://i.imgur.com/Hziwdlf.jpeg" alt="Executor Evon para Roblox" loading="lazy" />
           <h3>Evon Executor</h3>
           <p>Executor leve e poderoso, com interface intuitiva.</p>
@@ -523,5 +521,4 @@
         <div class="card">
           <img src="https://i.imgur.com/AynjCpC.png" alt="Script para Gum Infinity no Roblox" loading="lazy" />
           <h3>Script Gum Infinity</h3>
-          <p>Script com auto farm, coletor automático de frutas e recursos extras para Gum Infinity.</p>
-          <a href="htt
+          <p>Script com auto farm, coletor automático de frutas e recursos extras para Gum Infi
