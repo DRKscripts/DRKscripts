@@ -41,7 +41,6 @@
       padding: 30px 10px 15px;
       text-align: center;
       background-color: transparent;
-      animation: fadeIn 1.5s ease-in-out;
     }
 
     .logo-section img.logo {
@@ -88,14 +87,11 @@
 
     .tab-menu {
       max-width: 1200px;
-      margin: 0 auto 20px;
+      margin: 20px auto;
       display: flex;
       justify-content: center;
-      align-items: center;
       gap: 10px;
       flex-wrap: wrap;
-      padding: 10px 0;
-      background: rgba(0, 0, 0, 0.5);
     }
 
     .tab-button {
@@ -106,14 +102,12 @@
       border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      text-align: center;
+      transition: background-color 0.3s ease, transform 0.1s ease;
     }
 
     .tab-button:hover {
       background-color: var(--secondary-color);
       color: #000;
-      transform: scale(1.05);
     }
 
     .tab-button.active {
@@ -129,20 +123,6 @@
 
     .tab-content.active {
       display: block;
-    }
-
-    .tab-content h1 {
-      text-align: center; /* Centraliza os títulos */
-      font-size: 2rem;
-      color: var(--accent-purple);
-      text-shadow: 0 0 6px var(--accent-purple), 0 0 15px var(--accent-purple);
-      margin-bottom: 20px;
-      animation: fadeIn 1.5s ease-in-out; /* Animação direta nos títulos */
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     .grid {
@@ -184,7 +164,7 @@
 
     .download-button {
       padding: 10px 20px;
-      background-color: var(--primary-color);
+      background-color: var(--print-color);
       color: #000;
       text-decoration: none;
       border-radius: 5px;
@@ -222,7 +202,6 @@
       .grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
       .card img { max-height: 140px; }
       .logo-section img.logo { width: 120px; height: 120px; }
-      .tab-content h1 { font-size: 1.5rem; }
     }
 
     @media (max-width: 480px) {
@@ -289,7 +268,7 @@
           <img src="https://i.imgur.com/9gsfVl9.jpeg" alt="Ronix Executor" loading="lazy" />
           <h3>Ronix Executor</h3>
           <p>Executor rápido e seguro com bom suporte a scripts modernos.</p>
-          <a href="https://www.mediafire.com/file/w8ud8e04orqdh9t/Ronix_v2.671.818.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
+          <a href="https://www.mediafire.com/file/ztwbr9wzxrmu3bl/Ronix_675_Rel_sign_%281%29.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
         <div class="card">
           <img src="https://i.imgur.com/HcmrV4G.png" alt="Codex Executor" loading="lazy" />
@@ -350,6 +329,12 @@
           <h3>Frostware Lite</h3>
           <p>Executor leve e eficiente, otimizado para scripts simples.</p>
           <a href="https://www.mediafire.com/folder/8fw68avzcwc1o/Frostware+LITE" class="download-button" rel="noopener noreferrer">Download</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/gYDtqMQ.png" alt="Ronix Lite" loading="lazy" />
+          <h3>Ronix Lite</h3>
+          <p>Versão leve do Ronix, otimizada para dispositivos menos potentes.</p>
+          <a href="https://www.mediafire.com/folder/gked7s6qh9j30/Ronix+Lite" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
       </div>
     </section>
@@ -442,16 +427,7 @@
           console.log(`Clicado na aba: ${tabId}`);
 
           tabButtons.forEach(btn => btn.classList.remove('active'));
-          tabContents.forEach(content => {
-            content.classList.remove('active');
-            // Força recriação da animação no título
-            const title = content.querySelector('h1');
-            if (title) {
-              title.style.animation = 'none';
-              void title.offsetWidth; // Força reflow
-              title.style.animation = 'fadeIn 1.5s ease-in-out';
-            }
-          });
+          tabContents.forEach(content => content.classList.remove('active'));
 
           button.classList.add('active');
           const targetContent = document.getElementById(tabId);
@@ -466,4 +442,4 @@
     });
   </script>
 </body>
-          </html>
+  </html>
