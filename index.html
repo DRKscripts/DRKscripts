@@ -9,7 +9,7 @@
   <title>DRKscripts - Executores e Scripts para Roblox</title>
   <style>
     :root {
-      --primary-color: #ff3c3c;
+      --primary-color: #9370DB; /* Ajustei de #ff3c3c para manter consistência com o código mais recente */
       --secondary-color: #00c9a5;
       --card-bg: rgba(43, 43, 43, 0.8);
       --text-light: #ccc;
@@ -102,18 +102,17 @@
       border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.1s ease;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
     .tab-button:hover {
-      background-color: var(--secondary-color);
-      color: #000;
+      transform: scale(1.1) rotate(5deg);
     }
 
     .tab-button.active {
       background-color: var(--primary-color);
       color: #000;
-      transform: scale(1.05);
+      transform: scale(1.1) rotate(5deg);
     }
 
     .tab-content {
@@ -123,6 +122,36 @@
 
     .tab-content.active {
       display: block;
+    }
+
+    .tab-content h1 {
+      text-align: center;
+      font-size: clamp(2.5rem, 6vw, 3rem);
+      color: var(--accent-purple);
+      text-shadow: 0 0 6px var(--accent-purple), 0 0 15px var(--accent-purple);
+      margin-bottom: 20px;
+      animation: slideInAndGrow 1.5s ease-out forwards;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    @keyframes slideInAndGrow {
+      0% {
+        transform: translateX(-100%) scale(0.5); /* Começa pequeno e à esquerda */
+        opacity: 0;
+      }
+      80% {
+        transform: translateX(0) scale(1.1); /* Chegada com crescimento */
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0) scale(1); /* Estabiliza */
+        opacity: 1;
+      }
+    }
+
+    .tab-content h1.animate {
+      animation: slideInAndGrow 1.5s ease-out forwards;
     }
 
     .grid {
@@ -164,17 +193,24 @@
 
     .download-button {
       padding: 10px 20px;
-      background-color: var(--print-color);
-      color: #000;
+      background-color: #9370DB; /* Corrigido de var(--print-color) para var(--primary-color) */
+      color: #fff;
       text-decoration: none;
       border-radius: 5px;
       display: inline-block;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+      transition: transform 0.3s ease;
+      animation: glow 1.5s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 5px #9370DB, 0 0 10px #9370DB; }
+      50% { box-shadow: 0 0 20px #9370DB, 0 0 30px #BA55D3; }
+      100% { box-shadow: 0 0 5px #9370DB, 0 0 10px #9370DB; }
     }
 
     .download-button:hover {
-      background-color: var(--secondary-color);
+      transform: scale(1.1) rotate(5deg);
     }
 
     footer {
@@ -202,12 +238,14 @@
       .grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
       .card img { max-height: 140px; }
       .logo-section img.logo { width: 120px; height: 120px; }
+      .tab-content h1 { font-size: clamp(2rem, 5vw, 2.5rem); }
     }
 
     @media (max-width: 480px) {
       .tab-button { font-size: 0.9rem; padding: 8px 15px; }
       .card h3 { font-size: 1rem; }
       .card p { font-size: 0.8rem; }
+      .tab-content h1 { font-size: 2rem; }
     }
   </style>
 </head>
@@ -241,58 +279,58 @@
       <h1>Executores</h1>
       <div class="grid">
         <div class="card">
-          <img src="https://i.imgur.com/KPXHFKo.jpeg" alt="Delta V670 Oficial" loading="lazy" />
+          <img src="https://i.imgur.com/KPXHFKo.jpeg" alt="Delta Oficial" loading="lazy" />
           <h3>Delta V670 Oficial</h3>
           <p>Executor atualizado e estável, ideal para scripts Roblox.</p>
-          <a href="https://www.mediafire.com/folder/w9tduaxpvezmn/Delta" class="download-button" rel="noopener noreferrer">Download</a>
+          <a href="https://www.mediafire.com/file/dczslp3jffolfna/Delta-2.679.762.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
         <div class="card">
           <img src="https://i.imgur.com/6gSyABv.jpeg" alt="KRNL Executor" loading="lazy" />
           <h3>KRNL Executor</h3>
           <p>Popular executor gratuito com suporte para vários jogos.</p>
-          <a href="https://www.mediafire.com/folder/fo9ck3vvnpjcg/KRNL" class="download-button" rel="noopener noreferrer">Download</a>
+          <a href="https://www.mediafire.com/file/68rvz85r634ptuo/krnl_release_2.679.762_2025.6.29_34.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
         <div class="card">
           <img src="https://i.imgur.com/arRA8yY.png" alt="Fluxus Android" loading="lazy" />
           <h3>Fluxus Android</h3>
           <p>Executor .lua para dispositivos móveis com interface simples.</p>
-          <a href="https://www.mediafire.com/folder/v2cpl0f39ytt3/Fluxus" class="download-button" rel="noopener noreferrer">Download</a>
+          <a href="https://www.mediafire.com/file/ggqgzs7jakeasdt/Fluxus.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
         <div class="card">
           <img src="https://i.imgur.com/Hziwdlf.jpeg" alt="Evon Executor" loading="lazy" />
           <h3>Evon Executor</h3>
           <p>Executor leve e poderoso, com interface intuitiva.</p>
-          <a href="https://www.mediafire.com/file/697h1rbsruy15be/Evon.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
+          <a href="https://www.mediafire.com/file/yk3aq47d5wxcxtn/Evon.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
         <div class="card">
           <img src="https://i.imgur.com/9gsfVl9.jpeg" alt="Ronix Executor" loading="lazy" />
           <h3>Ronix Executor</h3>
           <p>Executor rápido e seguro com bom suporte a scripts modernos.</p>
-          <a href="https://www.mediafire.com/file/ztwbr9wzxrmu3bl/Ronix_675_Rel_sign_%281%29.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
+          <a href="https://www.mediafire.com/file/5axrhhnx1aa43fm/Ronix_679.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
         <div class="card">
           <img src="https://i.imgur.com/HcmrV4G.png" alt="Codex Executor" loading="lazy" />
           <h3>Codex Executor</h3>
           <p>Executor moderno com suporte a múltiplas APIs e atualizações constantes.</p>
-          <a href="https://www.mediafire.com/folder/l7or6osuao388/CodeX" class="download-button" rel="noopener noreferrer">Download</a>
+          <a href="https://www.mediafire.com/file/64o0d41dowb7cef/Codex_2.679.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
         <div class="card">
           <img src="https://i.imgur.com/xYGrX7G.png" alt="Arceus X" loading="lazy" />
           <h3>Arceus X</h3>
           <p>Um dos executores mais usados em dispositivos móveis para scripts .lua.</p>
-          <a href="https://www.mediafire.com/folder/dtj1wcgvfxw7j/Arceus" class="download-button" rel="noopener noreferrer">Download</a>
+          <a href="https://www.mediafire.com/file/b3mn7i3y9yi23q0/Roblox_Arceus_X_NEO_1.7.3.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
         <div class="card">
           <img src="https://i.imgur.com/EKx61Zo.png" alt="Trigon Executor" loading="lazy" />
           <h3>Trigon Executor</h3>
           <p>Executor robusto com grande compatibilidade e interface personalizável.</p>
-          <a href="https://www.mediafire.com/folder/0yflqig8cm7d1/Trigon" class="download-button" rel="noopener noreferrer">Download</a>
+          <a href="https://www.mediafire.com/file/gzf3ji8b6iewf3f/Trigon_2.679.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
         <div class="card">
           <img src="https://i.imgur.com/FKYpAXU.png" alt="Cryptic Executor" loading="lazy" />
           <h3>Cryptic Executor</h3>
           <p>Executor avançado focado em segurança e estabilidade para scripts Roblox.</p>
-          <a href="https://www.mediafire.com/folder/hcr3e43z65urg/Cryptic" class="download-button" rel="noopener noreferrer">Download</a>
+          <a href="https://www.mediafire.com/file/t9x52nxbu3z0gtw/Cryptic_2.679.762_APK.apk/file" class="download-button" rel="noopener noreferrer">Download</a>
         </div>
       </div>
     </section>
@@ -405,26 +443,17 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      console.log('DOM carregado, inicializando eventos das abas');
-
       const tabButtons = document.querySelectorAll('.tab-button');
       const tabContents = document.querySelectorAll('.tab-content');
 
-      if (tabButtons.length === 0) {
-        showError('Erro: Nenhum botão de aba encontrado.');
+      if (!tabButtons.length || !tabContents.length) {
+        showError('Erro: Botões ou conteúdos de aba não encontrados.');
         return;
       }
-      if (tabContents.length === 0) {
-        showError('Erro: Nenhum conteúdo de aba encontrado.');
-        return;
-      }
-
-      console.log(`Encontrados ${tabButtons.length} botões e ${tabContents.length} conteúdos`);
 
       tabButtons.forEach(button => {
         button.addEventListener('click', () => {
           const tabId = button.getAttribute('data-tab');
-          console.log(`Clicado na aba: ${tabId}`);
 
           tabButtons.forEach(btn => btn.classList.remove('active'));
           tabContents.forEach(content => content.classList.remove('active'));
@@ -433,13 +462,20 @@
           const targetContent = document.getElementById(tabId);
           if (targetContent) {
             targetContent.classList.add('active');
-            console.log(`Aba ativada: ${tabId}`);
+            // Reinicia a animação removendo e adicionando a classe 'animate'
+            const title = targetContent.querySelector('h1');
+            title.classList.remove('animate');
+            void title.offsetWidth; // Força reflow para reiniciar a animação
+            title.classList.add('animate');
           } else {
             showError(`Erro: Conteúdo da aba ${tabId} não encontrado.`);
           }
         });
       });
+
+      const firstTab = document.querySelector('.tab-button');
+      if (firstTab) firstTab.click();
     });
   </script>
 </body>
-  </html>
+            </html>
